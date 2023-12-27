@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Filter } from "./components/Filter";
+import { ProductCard } from "./components/ProductCard";
 
 export const Products = () => {
   const [showFilter, setShowFilter] = useState(false);
@@ -14,7 +15,14 @@ export const Products = () => {
           ></button>
         </span>
       </div>
-      {showFilter && <Filter />}
+      <div className="flex justify-center items-center flex-wrap my-4">
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+      </div>
+      {showFilter && <Filter setShowFilter={setShowFilter} />}
     </main>
   );
 };
