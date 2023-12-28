@@ -19,7 +19,7 @@ export const Header = () => {
   }, [darkMode]);
 
   return (
-    <header>
+    <header className="sticky top-0">
       <nav className="bg-white border-gray-200 dark:bg-gray-900 border-b-2">
         <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4 pt-1  ">
           <Link

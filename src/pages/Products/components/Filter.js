@@ -12,7 +12,7 @@ export const Filter = ({ setShowFilter }) => {
 
       <aside
         id="default-sidebar"
-        className="relative -left-1 top-15 z-40 w-64 h-[83vh] transition-transform -translate-x-full sm:translate-x-0"
+        className="fixed z-10 top-16 left-0 w-64 h-[100vh] transition-opacity  sm:translate-x-0"
         aria-label="Sidebar"
       >
         <div className="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-600">
