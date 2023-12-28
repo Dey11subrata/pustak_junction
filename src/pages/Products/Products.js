@@ -5,8 +5,8 @@ import { ProductCard } from "./components/ProductCard";
 export const Products = () => {
   const [showFilter, setShowFilter] = useState(false);
   return (
-    <main>
-      <div className="flex justify-between text-2xl">
+    <main className={`${showFilter ? "overflow-hidden" : ""}`}>
+      <div className={`flex justify-between text-2xl `}>
         <span className="dark:text-white">Book count (X)</span>
         <span>
           <button
