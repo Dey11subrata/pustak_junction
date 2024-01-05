@@ -1,6 +1,15 @@
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+// import { Link } from "react-router-dom";
 
 export const Filter = ({ setShowFilter }) => {
+  const [filter, setFilter] = useState({});
+  const handleChange = (e) => {
+    setFilter({ ...filter, [e.target.name]: e.target.value });
+    // console.log(filter);
+  };
+  useEffect(() => {
+    console.log(filter);
+  }, [filter]);
   return (
     <section>
       {/* <button data-drawer-target="default-sidebar" data-drawer-toggle="default-sidebar" aria-controls="default-sidebar" type="button" className="inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
@@ -42,6 +51,7 @@ export const Filter = ({ setShowFilter }) => {
                   name="sort_by"
                   id="high_low"
                   value="Price - High to Low"
+                  onChange={handleChange}
                 />{" "}
                 Price - High to Low
               </label>
@@ -51,6 +61,7 @@ export const Filter = ({ setShowFilter }) => {
                   name="sort_by"
                   id="low_high"
                   value="Price - Low to High"
+                  onChange={handleChange}
                 />{" "}
                 Price - Low to High
               </label>
@@ -58,29 +69,70 @@ export const Filter = ({ setShowFilter }) => {
             <section className="flex flex-col mb-2">
               <h2>Ratings</h2>
               <label htmlFor="four-plus">
-                <input type="radio" name="rating" id="four_plus" /> 4 and Above
+                <input
+                  onChange={handleChange}
+                  type="radio"
+                  name="rating"
+                  id="four_plus"
+                  value="four_plus"
+                />{" "}
+                4 and Above
               </label>
               <label htmlFor="three_plus">
-                <input type="radio" name="rating" id="three_plus" /> 3 and Above
+                <input
+                  onChange={handleChange}
+                  type="radio"
+                  name="rating"
+                  id="three_plus"
+                  value="three_plus"
+                />{" "}
+                3 and Above
               </label>
               <label htmlFor="two_plus">
-                <input type="radio" name="rating" id="two_plus" /> 2 and Above
+                <input
+                  onChange={handleChange}
+                  type="radio"
+                  name="rating"
+                  id="two_plus"
+                  value="two_plus"
+                />{" "}
+                2 and Above
               </label>
               <label htmlFor="one_plus">
-                <input type="radio" name="rating" id="one_plus" /> 1 and Above
+                <input
+                  onChange={handleChange}
+                  type="radio"
+                  name="rating"
+                  id="one_plus"
+                  value="one_plus"
+                />{" "}
+                1 and Above
               </label>
             </section>
             <section className="flex flex-col mb-2">
               <h2>Other Filters</h2>
               <label htmlFor="four-plus">
-                <input type="checkbox" name="availablity" id="best_selling" />{" "}
+                <input
+                  onChange={handleChange}
+                  type="checkbox"
+                  name="popularity"
+                  id="best_selling"
+                  value="best_selling"
+                />{" "}
                 Best Selling
               </label>
               <label htmlFor="">
-                <input type="checkbox" name="availablity" id="in_stock" /> In
-                Stock
+                <input
+                  onChange={handleChange}
+                  type="checkbox"
+                  name="availablity"
+                  id="in_stock"
+                  value="in_stock"
+                />{" "}
+                In Stock
               </label>
             </section>
+            <button></button>
           </form>
         </div>
       </aside>
